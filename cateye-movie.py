@@ -13,14 +13,14 @@ uapool=[
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.154 Safari/537.36 LBBROWSER ',
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36 TheWorld 7'
 ]
-uapic=random.choice(uapool)
-headers={'User-Agent':uapic}
+struapick=random.choice(uapool)
+headers={'User-Agent':struapick}
 page=requests.get('http://maoyan.com/board/7',headers=headers)
 html=page.content
-ceobj=bs4.BeautifulSoup(html,'lxml')
-namelist=ceobj.find_all('a',{'title':True,'class':'image-link'})
-online=ceobj.find_all('p',attrs={'class':'releasetime'})
-actor=ceobj.find_all('p',attrs={'class':'star'})
+pg_obj=bs4.BeautifulSoup(html,'lxml')
+namelist=pg_obj.find_all('a',{'title':True,'class':'image-link'})
+online=pg_obj.find_all('p',attrs={'class':'releasetime'})
+actor=pg_obj.find_all('p',attrs={'class':'star'})
 actlist=[]
 nlist1=[]
 olist=[]
